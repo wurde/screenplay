@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "npm run cy:run",
+    "hash": "node ./lib/create-hash.js",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run-and-record": "cypress run --record",
@@ -16,6 +17,7 @@
     "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "graphql": "^15.6.0",
     "graphql-request": "^3.5.0",
     "marked": "^3.0.4",
