@@ -44,14 +44,18 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  // TODO pass id to get screenplay via title
-  const { screenplay } = await graphcms.request(`
-    query GetScreenplay {
-      screenplay: screenplays(where: { title: "Blade Runner"}) {
+  const { screenplay } = await graphcms.request(
+    `
+    query GetScreenplay($slug: String!) {
+      screenplay: screenplays(where: { slug: $slug }) {
         content
       }
     }
-  `);
+  `,
+    {
+      slug: id,
+    }
+  );
 
   const html = marked(screenplay[0].content);
 
