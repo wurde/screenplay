@@ -6,4 +6,7 @@
   .bold-text {
     @apply text-xl font-bold;
   }
+  .script-link {
+    @apply text-blue-600 underline;
+  }
 }

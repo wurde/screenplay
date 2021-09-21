@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import _ from "lodash";
 
 import { FormattedMessage } from "react-intl";
@@ -21,15 +22,19 @@ export default function Home({ screenplays }) {
       <main className={styles.main}>
         <h1 className={styles.title}>{title}</h1>
 
-        <div>
+        <ol className="mt-10">
           {screenplays.map((s, i) => {
             return (
-              <div>
-                <p>{s.title}</p>
-              </div>
+              <li className="my-3">
+                <Link href={`/scripts/${_.kebabCase(s.title)}`}>
+                  <a className="script-link">{s.title}</a>
+                </Link>
+                <br />
+                Written by {s.writers}
+              </li>
             );
           })}
-        </div>
+        </ol>
       </main>
 
       <footer className={styles.footer}>
@@ -54,7 +59,7 @@ export default function Home({ screenplays }) {
 export async function getStaticProps() {
   const { screenplays } = await graphcms.request(`
     {
-      screenplays {
+      screenplays(orderBy: title_ASC) {
         title
         writers
       }
