@@ -25,7 +25,7 @@ export default function Home({ screenplays }) {
         <ol className="mt-10">
           {screenplays.map((s, i) => {
             return (
-              <li className="my-3">
+              <li className="my-3" key={i}>
                 <Link href={`/screenplays/${_.kebabCase(s.title)}`}>
                   <a className="primary-link">{s.title}</a>
                 </Link>
