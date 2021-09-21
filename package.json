@@ -20,6 +20,7 @@
     "bcrypt": "^5.0.1",
     "graphql": "^15.6.0",
     "graphql-request": "^3.5.0",
+    "lodash": "^4.17.21",
     "marked": "^3.0.4",
     "next": "11.1.2",
     "next-auth": "^3.29.0",
