@@ -26,8 +26,8 @@ export default function Home({ screenplays }) {
           {screenplays.map((s, i) => {
             return (
               <li className="my-3">
-                <Link href={`/scripts/${_.kebabCase(s.title)}`}>
-                  <a className="script-link">{s.title}</a>
+                <Link href={`/screenplays/${_.kebabCase(s.title)}`}>
+                  <a className="primary-link">{s.title}</a>
                 </Link>
                 <br />
                 Written by {s.writers}
@@ -58,7 +58,7 @@ export default function Home({ screenplays }) {
 
 export async function getStaticProps() {
   const { screenplays } = await graphcms.request(`
-    {
+    query GetScreenplay {
       screenplays(orderBy: title_ASC) {
         title
         writers

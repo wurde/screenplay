@@ -6,7 +6,7 @@
   .bold-text {
     @apply text-xl font-bold;
   }
-  .script-link {
+  .primary-link {
     @apply text-blue-600 underline;
   }
 }
