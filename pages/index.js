@@ -1,5 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+
+import { FormattedMessage } from "react-intl";
+
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -13,7 +16,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <FormattedMessage
+            id="index.welcome"
+            defaultMessage="Welcome to Next.js!"
+          ></FormattedMessage>
         </h1>
 
         <p className={styles.description}>
