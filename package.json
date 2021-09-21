@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run-and-record": "cypress run --record"
+    "cy:run-and-record": "cypress run --record",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -s public/",
+    "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
     "graphql": "^15.6.0",
@@ -27,12 +31,15 @@
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
+    "chromatic": "^5.10.1",
+    "cypress": "^8.4.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "husky": "^7.0.2",
     "prettier": "^2.4.1",
     "storybook": "^6.3.8",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^2.2.15",
+    "trim": "^1.0.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
