@@ -17,4 +17,7 @@ module.exports = {
   images: {
     domains: ["media.graphcms.com"],
   },
+  experimental: {
+    staticPageGenerationTimeout: 600
+  }
 };
